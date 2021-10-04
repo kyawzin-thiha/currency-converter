@@ -11,21 +11,29 @@ const ManageState = (base: string, data: any) => {
 	return {
 		changeInput1Value: (value: string): void => {
 			setInput1Value(value);
-			const convertedValue = (
-				parseFloat(value) *
-				input1BaseValue *
-				data[input2Currency]
-			).toFixed(2);
-			setInput2Value(convertedValue);
+			if (value) {
+				const convertedValue = (
+					parseFloat(value) *
+					input1BaseValue *
+					data[input2Currency]
+				).toFixed(2);
+				setInput2Value(convertedValue);
+			} else {
+				setInput2Value(value);
+			}
 		},
 		changeInput2Value: (value: string): void => {
 			setInput2Value(value);
-			const convertedValue = (
-				parseFloat(value) *
-				input2BaseValue *
-				data[input1Currency]
-			).toFixed(2);
-			setInput1Value(convertedValue);
+			if (value) {
+				const convertedValue = (
+					parseFloat(value) *
+					input2BaseValue *
+					data[input1Currency]
+				).toFixed(2);
+				setInput1Value(convertedValue);
+			} else {
+				setInput1Value(value);
+			}
 		},
 		changeInput1Currency: (value: string): void => {
 			setInput1Currency(value);
