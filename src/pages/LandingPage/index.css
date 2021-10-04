@@ -1,0 +1,70 @@
+.landing-page {
+	width: 35%;
+	min-height: 300px;
+	height: auto;
+	border: 1px solid #fff;
+	border-radius: 20px;
+	box-shadow: 0px 1px 5px 3px rgba(219, 219, 219, 0.5);
+	padding: 10px;
+	background-color: rgb(251, 251, 251);
+	overflow: hidden;
+}
+.landing-page .header {
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	border-bottom: 1px solid rgba(90, 90, 90, 0.2);
+}
+.landing-page .header span {
+	letter-spacing: 1px;
+	font-weight: bolder;
+	font-size: 20px;
+}
+.landing-page .input-container {
+	width: 100%;
+	height: 200px;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.landing-page .input1,
+.landing-page .input2 {
+	width: 100%;
+}
+.landing-page .input-container .switch-btn,
+.landing-page .input-container .switch-btn button,
+.landing-page .input-container .switch-btn > * {
+	width: 40px;
+	height: 40px;
+	background: transparent;
+	border: none;
+	outline: none;
+}
+.landing-page .updated {
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 100%;
+	height: auto;
+	font-size: 15px;
+	font-style: italic;
+	letter-spacing: 1px;
+	color: rgba(90, 90, 90, 0.6);
+}
+@media only screen and (max-width: 767px) {
+	.landing-page {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.landing-page > div {
+		margin: 10px;
+	}
+	.landing-page input {
+		width: 130px;
+	}
+}
