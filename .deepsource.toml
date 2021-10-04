@@ -5,7 +5,7 @@ exclude_patterns = [
 ]
 
 [[analyzers]]
-    name = "typescript"
+    name = "javascript"
     enabled = true
     [analyzers.meta]
         plugins = ["react"]
