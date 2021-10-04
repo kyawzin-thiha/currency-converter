@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import baseCurrency from './baseValue';
 const ManageState = (base: string, data: any) => {
-	const [input1Value, setInput1Value] = useState<string>('.');
-	const [input2Value, setInput2Value] = useState<string>('.');
+	const [input1Value, setInput1Value] = useState<string>('');
+	const [input2Value, setInput2Value] = useState<string>('');
 	const [input1Currency, setInput1Currency] = useState<string>(base);
 	const [input2Currency, setInput2Currency] = useState<string>(base);
 	const [input1BaseValue, setInput1BaseValue] = useState<number>(1);
@@ -36,12 +36,14 @@ const ManageState = (base: string, data: any) => {
 				input1BaseValue = baseCurrency(data[value]);
 			}
 			setInput1BaseValue(input1BaseValue);
-			const convertedValue = (
-				data[value] *
-				parseFloat(input2Value) *
-				input2BaseValue
-			).toFixed(2);
-			setInput1Value(convertedValue);
+			if (input1Value) {
+				const convertedValue = (
+					data[value] *
+					parseFloat(input2Value) *
+					input2BaseValue
+				).toFixed(2);
+				setInput1Value(convertedValue);
+			}
 		},
 		changeInput2Currency: (value: string): void => {
 			setInput2Currency(value);
@@ -52,12 +54,14 @@ const ManageState = (base: string, data: any) => {
 				input2BaseValue = baseCurrency(data[value]);
 			}
 			setInput2BaseValue(input2BaseValue);
-			const convertedValue = (
-				data[value] *
-				input1BaseValue *
-				parseFloat(input1Value)
-			).toFixed(2);
-			setInput2Value(convertedValue);
+			if (input2Value) {
+				const convertedValue = (
+					data[value] *
+					input1BaseValue *
+					parseFloat(input1Value)
+				).toFixed(2);
+				setInput2Value(convertedValue);
+			}
 		},
 		switchValue: (): void => {
 			const tempInput1Value: string = input1Value;
