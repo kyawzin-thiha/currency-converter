@@ -1,0 +1,17 @@
+version = 1
+
+exclude_patterns = [
+    "public/**,",
+]
+
+[[analyzers]]
+    name = "react-currency-converter"
+    enabled = true
+    [analyzers.meta]
+        plugins = ['react']
+        module_system = 'es-modules'
+        dependency_file_paths = [
+            '/package.json',
+            '/tsconfig.json,
+        ]
+        environment = ['browser']
