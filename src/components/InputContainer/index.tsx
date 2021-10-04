@@ -41,7 +41,7 @@ const Index = ({
 			return;
 		}
 		if (!e.target.value) {
-			setInputValue('');
+			setInputValue('0');
 			return;
 		}
 		setInputValue(e.target.value);
